@@ -1,0 +1,28 @@
+{
+  "name": "ContactRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "vehicle": {
+      "type": "string"
+    },
+    "service": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "email"
+  ]
+}

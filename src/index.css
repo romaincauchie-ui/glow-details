@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 11%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 15% 11%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 210 100% 56%;
+    --primary-foreground: 220 15% 8%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 210 100% 56%;
+    --accent-foreground: 220 15% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 210 100% 56%;
+    --radius: 0.2rem;
+    --cyan: 38 40% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-montserrat;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .font-barlow {
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  .text-cyan {
+    color: hsl(var(--cyan));
+  }
+  .bg-cyan {
+    background-color: hsl(var(--cyan));
+  }
+  .border-cyan {
+    border-color: hsl(var(--cyan));
+  }
+}
