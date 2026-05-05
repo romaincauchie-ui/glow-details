@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const sections = [
   {
-    label: 'Nettoyage',
+    label: 'Nettoyage à domicile',
     subtitle: 'Service mobile à domicile',
     note: 'Déplacement offert dans un rayon de 25km · 0,60€/km au-delà',
     categories: [
@@ -12,32 +12,33 @@ const sections = [
         title: 'Entretien mensuel',
         price: 'À partir de 80€',
         items: ['Nettoyage extérieur', 'Aspiration intérieure', 'Traitement des plastiques', 'Vitres & écrans'],
-        note: 'Citadine / Berline / SUV',
+        note: null,
       },
+      {
+        title: 'Detailing complet',
+        price: 'À partir de 150€',
+        items: ['Nettoyage intérieur & extérieur approfondi', 'Finitions soignées', 'Traitement des plastiques', 'Vitres & écrans'],
+        note: null,
+        highlight: true,
+      },
+    ],
+  },
+  {
+    label: 'Nettoyage',
+    subtitle: null,
+    note: null,
+    categories: [
       {
         title: 'Intérieur',
-        price: 'À partir de 85€',
+        price: 'À partir de 105€',
         items: ['Aspiration complète', 'Nettoyage tapis par extraction', 'Nettoyage des plastiques', 'Rénovation volant', 'Vitres & écrans'],
-        note: 'Citadine / 95€ Berline / 110€ SUV',
+        note: null,
       },
       {
-        title: 'Rénovation habitacle',
-        price: 'À partir de 160€',
-        items: ['Nettoyage intérieur approfondi', 'Extraction sièges / nourrissage cuir', 'Traitement vapeur antibactérien', 'Neutralisation des odeurs'],
-        note: '180€ Berline / 200€ SUV',
-      },
-      {
-        title: 'Extérieur (lavage main)',
-        price: 'À partir de 40€',
+        title: 'Extérieur',
+        price: 'À partir de 50€',
         items: ['Nettoyage jantes & passages de roues', 'Pré-lavage + lavage à la main', 'Séchage microfibre', 'Application cire', 'Finitions & contours de portes'],
-        note: '50€ Berline / 60€ SUV',
-      },
-      {
-        title: 'Formule complète',
-        price: 'À partir de 120€',
-        items: ['Intérieur + Extérieur complet', 'Contours de portes', 'Finitions soignées'],
-        note: '140€ Berline / 160€ SUV',
-        highlight: true,
+        note: null,
       },
     ],
   },
@@ -47,22 +48,16 @@ const sections = [
     note: null,
     categories: [
       {
-        title: 'Polissage 1 étape',
-        price: 'À partir de 300€',
+        title: 'Lustrage',
+        price: 'À partir de 350€',
         items: ['Lavage & décontamination', 'Correction micro-rayures légères', 'Rénovation plastiques extérieurs', 'Application scellant protecteur'],
-        note: '5–6 heures de travail',
+        note: null,
       },
       {
-        title: 'Polissage 2 étapes',
-        price: 'À partir de 500€',
+        title: 'Polissage',
+        price: 'À partir de 600€',
         items: ['Lavage & décontamination', 'Correction micro-rayures & tourbillons', 'Polissage finition haute brillance', 'Application scellant protecteur'],
-        note: '10–14 heures / 1–2 jours',
-      },
-      {
-        title: 'Polissage 3 étapes',
-        price: 'Sur devis',
-        items: ['Lavage & décontamination', 'Correction intensive', 'Polissage intermédiaire', 'Polissage finition maximale', 'Application scellant protecteur'],
-        note: 'Jusqu\'à 3 jours de travail',
+        note: null,
       },
       {
         title: 'Polissage des phares',
@@ -79,19 +74,19 @@ const sections = [
     categories: [
       {
         title: 'Véhicule neuf',
-        price: 'À partir de 500€',
+        price: 'À partir de 600€',
         items: ['Lavage & décontamination minutieuse', 'Préparation de surface optimale', 'Application revêtement céramique', 'Brillance intense + effet hydrophobe'],
         note: 'Véhicules neufs ou très récents',
       },
       {
         title: 'Véhicule d\'occasion',
-        price: 'À partir de 1 100€',
+        price: 'À partir de 1 000€',
         items: ['Polissage de correction inclus', 'Lavage & décontamination', 'Application revêtement céramique', 'Protection et brillance maximales'],
         note: 'Avec correction de peinture',
       },
       {
         title: 'Véhicule mat / PPF',
-        price: 'À partir de 500€',
+        price: 'À partir de 600€',
         items: ['Produits adaptés peinture mate', 'Préservation de l\'aspect d\'origine', 'Protection contre les contaminants', 'Facilitation de l\'entretien'],
         note: 'Peintures mates et films PPF',
       },
@@ -130,12 +125,20 @@ const sections = [
   },
 ];
 
-const extras = [
-  { label: 'Shampooing des sièges', price: '80€' },
-  { label: 'Nettoyage toile décapotable', price: '40€' },
+const extrasInterior = [
+  { label: 'Shampooing des sièges', price: '75€' },
+  { label: 'Shampooing moquette', price: '50€' },
+  { label: 'Désinfection intérieur', price: '35€' },
+  { label: 'Nettoyage plafonnier', price: '60€' },
+  { label: 'Céramique cuir', price: '200€' },
+];
+
+const extrasExterior = [
+  { label: 'Traitement hydrophobe', price: '35€' },
+  { label: 'Décontamination carrosserie', price: '35€' },
+  { label: 'Nettoyage toile cabriolet', price: '40€' },
+  { label: 'Traitement toile cabriolet', price: '180€' },
   { label: 'Compartiment moteur', price: '50€' },
-  { label: 'Traitement pare-brise hydrophobe', price: '30€' },
-  { label: 'Décontamination carrosserie', price: '30€' },
 ];
 
 function PriceCard({ category, isLight }) {
@@ -257,9 +260,28 @@ export default function Tarifs() {
             </div>
           </motion.div>
 
-          {/* Options */}
+          {/* Options intérieur */}
+          <h3 className="text-[#0d1117] font-bold text-sm tracking-[0.15em] uppercase mb-4">Options intérieur</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {extrasInterior.map((opt, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: i * 0.06 }} viewport={{ once: true }}
+                className="flex items-center justify-between bg-white border border-gray-200 rounded-xl px-5 py-4 hover:border-cyan/50 transition-colors shadow-sm"
+              >
+                <div className="flex items-center gap-3 text-sm text-[#0d1117]/75">
+                  <span className="w-1.5 h-1.5 bg-cyan rounded-full flex-shrink-0" />
+                  {opt.label}
+                </div>
+                <span className="text-cyan font-bold text-sm">{opt.price}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Options extérieur */}
+          <h3 className="text-[#0d1117] font-bold text-sm tracking-[0.15em] uppercase mb-4">Options extérieur</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {extras.map((opt, i) => (
+            {extrasExterior.map((opt, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: i * 0.06 }} viewport={{ once: true }}
@@ -275,7 +297,7 @@ export default function Tarifs() {
           </div>
 
           <p className="text-center text-xs text-[#0d1117]/35 mt-10">
-            Tous nos prix s'entendent HTVA · Un supplément est applicable si le véhicule est particulièrement sale ou non vidé.
+            Tous nos prix s'entendent TTC · Un supplément est applicable si le véhicule est particulièrement sale ou non vidé.
           </p>
         </div>
       </section>

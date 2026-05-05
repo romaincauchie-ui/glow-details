@@ -1,0 +1,34 @@
+{
+  "name": "GaleriePhoto",
+  "type": "object",
+  "properties": {
+    "src": {
+      "type": "string",
+      "description": "URL de la photo"
+    },
+    "label": {
+      "type": "string",
+      "description": "Titre / description de la photo"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Mobile",
+        "Int\u00e9rieur",
+        "Ext\u00e9rieur",
+        "Polissage",
+        "C\u00e9ramique",
+        "V\u00e9hicules"
+      ],
+      "description": "Cat\u00e9gorie de la photo"
+    },
+    "order": {
+      "type": "number",
+      "description": "Ordre d'affichage"
+    }
+  },
+  "required": [
+    "src",
+    "category"
+  ]
+}

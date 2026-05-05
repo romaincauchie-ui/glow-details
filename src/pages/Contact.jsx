@@ -37,7 +37,7 @@ export default function Contact() {
               <span className="text-cyan">projet detailing</span>
             </h2>
             <p className="text-[#0d1117]/55 text-sm leading-relaxed mb-10">
-              Uniquement sur rendez-vous. Contactez-nous pour obtenir un devis personnalisé ou pour planifier une intervention à votre domicile.
+              Uniquement sur rendez-vous. Contactez-moi pour obtenir un devis personnalisé ou planifier une intervention à votre domicile.
             </p>
 
             <div className="space-y-6">
@@ -107,7 +107,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-8 pt-8 border-t border-gray-200">
-              <div className="text-xs text-[#0d1117]/40 tracking-widest uppercase mb-4">Suivez-nous</div>
+              <div className="text-xs text-[#0d1117]/40 tracking-widest uppercase mb-4">Suivez-moi</div>
               <div className="flex items-center gap-4">
                 <a href="https://www.instagram.com/glow.and.details" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 border border-cyan/40 text-cyan px-4 py-2 text-xs tracking-widest uppercase hover:bg-cyan hover:text-[#0d1117] transition-all rounded-xl">

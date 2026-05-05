@@ -9,8 +9,13 @@ const services = [
   id: 'domicile',
   label: 'Nettoyage à domicile',
   subtitle: 'Service mobile professionnel',
-  description: "Vous n'avez pas le temps de laver ou d'entretenir votre véhicule vous-même ? Avec notre service de detailing mobile, nous transformons votre véhicule devant votre porte, en nous adaptant à votre agenda.",
+  description: "Vous n'avez pas le temps de laver ou d'entretenir votre véhicule vous-même ? Avec mon service de detailing mobile, je transforme votre véhicule devant votre porte, en m'adaptant à votre agenda. Qu'il s'agisse d'une voiture familiale, d'une voiture de société ou d'une voiture de luxe, je veille à ce que votre véhicule soit à nouveau propre, entretenu et protégé.",
   image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/6726ed067_Export_GlowDetails-16copie.jpg',
+  extraImages: [
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/8c7a9189f_Servicemobile2.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/08cdd00f6_Export_GlowDetails-46copie.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/cfd7d8212_Export_GlowDetails-39copie.jpg',
+  ],
   items: [
   { name: 'Entretien mensuel', price: 'À partir de 100€', features: ['Nettoyage extérieur', 'Aspiration intérieure', 'Traitement des plastiques', 'Vitres & écrans'] },
   { name: 'Intérieur + extérieur', price: 'À partir de 120€', features: ['Nettoyage complet extérieur', 'Nettoyage complet intérieur', 'Contours de portes', 'Finitions soignées'] }],
@@ -21,8 +26,13 @@ const services = [
   id: 'interieur',
   label: 'Intérieur',
   subtitle: 'Nettoyage en profondeur',
-  description: "Le nettoyage intérieur consiste à redonner à l'habitacle toute sa propreté et sa fraîcheur. Les sièges, tapis, moquettes, plastiques et zones difficiles d'accès sont nettoyés avec précision.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/1743076fb_IMG_4466.jpg',
+  description: "Je redonne à votre habitacle toute sa propreté et sa fraîcheur. Sièges, tapis, moquettes, plastiques et zones difficiles d'accès. Chaque surface est traitée avec précision et des produits adaptés pour éliminer poussières, taches et impuretés. Votre intérieur ressort propre, sain et parfaitement entretenu.",
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/d7611521e_Interieur1.jpg',
+  extraImages: [
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/a4385a2c9_Interieur2paysage.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/754f6dc0f_Interieur3.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/86d4128f1_Interieur4.jpg',
+  ],
   items: [
   {
     name: 'Nettoyage intérieur', price: 'À partir de 85€',
@@ -39,8 +49,13 @@ const services = [
   id: 'exterieur',
   label: 'Extérieur',
   subtitle: 'Lavage à la main premium',
-  description: "Le nettoyage extérieur est réalisé selon des méthodes de lavage professionnelles permettant de nettoyer la carrosserie en profondeur tout en respectant les surfaces les plus sensibles.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/afab306c8_Export_GlowDetails-26copie.jpg',
+  description: "Je nettoie l'extérieur de votre véhicule selon des méthodes de lavage professionnelles permettant de nettoyer la carrosserie en profondeur tout en respectant les surfaces les plus sensibles. Chaque élément du véhicule est soigneusement traité afin d'éliminer le film routier, la saleté et les contaminants accumulés. Ce travail minutieux permet de restaurer la brillance naturelle du véhicule et d'obtenir une finition nette et soignée dans les moindres détails.",
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/ecb6bfc61_Exterieur1.jpg',
+  extraImages: [
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/ecb6bfc61_Exterieur1.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/3a87955ff_Exterieur2.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/482f7d522_Traitementhydrophobepare-brise.jpg',
+  ],
   items: [
   {
     name: 'Lavage à la main premium', price: 'À partir de 40€',
@@ -54,7 +69,7 @@ const services = [
   label: 'Polissage',
   subtitle: 'Correction de peinture',
   description: "Le polissage est la solution idéale pour redonner toute sa brillance à votre véhicule. Ce procédé technique permet de corriger les défauts présents dans le vernis afin de restaurer la profondeur, la clarté et l'éclat de la carrosserie.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/d7b61f0a5_Export_GlowDetails-53copie.jpg',
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/1272a9209_Polissage.jpg',
   items: [
   {
     name: 'Polissage 1 étape', price: 'À partir de 300€',
@@ -83,7 +98,12 @@ const services = [
   label: 'Revêtement céramique',
   subtitle: 'Protection longue durée',
   description: "Un revêtement céramique forme une barrière durable contre les agressions extérieures tout en améliorant la brillance et la profondeur de votre peinture. Un investissement durable pour votre véhicule.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/a4f834154_IMG_7543.jpg',
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/07299290e_Ceramique1.jpg',
+  extraImages: [
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/438a3eee5_Ceramique2paysage.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/07d443c4a_Ceramique3.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/84f5b423f_Ceramique4.jpg',
+  ],
   items: [
   {
     name: 'Véhicule neuf', price: 'À partir de 800€',
@@ -106,8 +126,8 @@ const services = [
   id: 'vitres',
   label: 'Vitres teintées',
   subtitle: 'Pose professionnelle — Garantie à vie',
-  description: "La pose de vitres teintées améliore à la fois le confort, la protection et l'esthétique de votre véhicule. Nos films de haute qualité sont posés avec précision pour un résultat parfait et durable.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/2a7f90907_IMG_4408.jpg',
+  description: "La pose de vitres teintées améliore à la fois le confort, la protection et l'esthétique de votre véhicule. Des films de haute qualité, appliqués avec précision, assurent un rendu irréprochable et durable.",
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/04ad1cf9d_Vitresteintees1.jpg',
   items: [
   { name: 'Face arrière — 3 vitres', price: 'À partir de 180€', features: ['Découpe sur mesure', 'Application sans bulles', 'Garantie à vie'] },
   { name: 'Face arrière — 5 vitres', price: 'À partir de 200€', features: ['Découpe sur mesure', 'Application sans bulles', 'Garantie à vie'] },
@@ -173,7 +193,7 @@ export default function Services() {
           <section
             key={service.id}
             id={service.id}
-            className="px-6 py-28 bg-[#0d1117] border-t border-white/8">
+            className="px-6 py-16 bg-[#0d1117] border-t border-white/8">
 
             <div className="max-w-6xl mx-auto">
               <div className={`grid lg:grid-cols-2 gap-20 items-center mb-20 ${flip ? 'lg:grid-flow-col' : ''}`}>
@@ -210,6 +230,13 @@ export default function Services() {
                   className={`relative ${flip ? 'lg:order-1' : ''}`}>
                   
                   <img src={service.image} alt={service.label} className="w-full aspect-[4/3] object-cover rounded-2xl" />
+                  {service.extraImages && (
+                    <div className="grid grid-cols-3 gap-2 mt-2">
+                      {service.extraImages.map((img, i) => (
+                        <img key={i} src={img} alt="" className="w-full aspect-square object-cover rounded-xl" />
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               </div>
 
@@ -268,9 +295,9 @@ export default function Services() {
       <section className="py-28 px-6 bg-[#0d1117] border-t border-white/5">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-montserrat font-bold text-3xl sm:text-4xl text-white mb-4">Demandez un devis gratuit</h2>
-          <p className="text-white/45 mb-10 text-base leading-loose">Uniquement sur rendez-vous · Tous les tarifs s'entendent HTVA</p>
+          <p className="text-white/45 mb-10 text-base leading-loose">Uniquement sur rendez-vous · Tous les tarifs s'entendent TTC</p>
           <Link to="/contact" className="inline-flex items-center gap-2 bg-cyan text-[#0d1117] px-8 py-4 text-xs tracking-[0.15em] font-black uppercase hover:bg-cyan/80 transition-colors group rounded-xl">
-            Nous contacter <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+            Contact <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
       </section>

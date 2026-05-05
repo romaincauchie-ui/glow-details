@@ -13,6 +13,7 @@ import APropos from './pages/APropos';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Galerie from './pages/Galerie';
+import AdminGalerie from './pages/AdminGalerie';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -44,6 +45,7 @@ const AuthenticatedApp = () => {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/galerie" element={<Galerie />} />
+        <Route path="/admin/galerie" element={<AdminGalerie />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>

@@ -28,7 +28,7 @@ const faqCategories = [
     category: 'Polissage',
     questions: [
       { q: "Combien de temps dure un polissage ?", a: "Le polissage en 1 étape prend généralement entre 5 et 6 heures. Le polissage en 2 étapes nécessite entre 10 et 14 heures (1 à 2 jours). Le polissage en 3 étapes peut nécessiter jusqu'à 3 jours de travail. Chaque véhicule étant différent, le temps peut varier selon l'état de la peinture." },
-      { q: "Toutes les rayures peuvent-elles être éliminées ?", a: "Lors d'un polissage, notre objectif est d'éliminer le maximum de défauts présents dans la peinture. Avec un polissage en plusieurs étapes, une grande partie des imperfections peut être fortement réduite, voire complètement supprimée. Cependant, certaines rayures profondes peuvent être plus difficiles à corriger sans intervention de peinture." },
+      { q: "Toutes les rayures peuvent-elles être éliminées ?", a: "Lors d'un polissage, l'objectif est d'éliminer le maximum de défauts présents dans la peinture. Avec un polissage en plusieurs étapes, une grande partie des imperfections peut être fortement réduite, voire complètement supprimée. Cependant, certaines rayures profondes peuvent être plus difficiles à corriger sans intervention de peinture. La priorité est toujours d'obtenir le meilleur résultat possible, tout en préservant l'épaisseur et l'intégrité du vernis." },
     ]
   },
   {
@@ -44,7 +44,7 @@ const faqCategories = [
   {
     category: 'Vitres teintées',
     questions: [
-      { q: "Les vitres teintées sont-elles légales ?", a: "Oui, mais certaines règles doivent être respectées. En Belgique, les vitres avant doivent laisser passer suffisamment de lumière afin de garantir la visibilité du conducteur. Les vitres arrière peuvent généralement être plus foncées. Nous vous conseillons toujours une solution conforme à la législation." },
+      { q: "Les vitres teintées sont-elles légales ?", a: "Oui, mais certaines règles doivent être respectées. En Belgique, les vitres avant doivent laisser passer suffisamment de lumière afin de garantir la visibilité du conducteur. Les vitres arrière peuvent généralement être plus foncées. Chaque recommandation est faite dans le respect strict de la législation, afin de vous garantir une conformité totale en toute sérénité." },
       { q: "Combien de temps dure la pose ?", a: "La pose de vitres teintées prend généralement entre 2 et 4 heures, selon le véhicule et le nombre de vitres à traiter." },
       { q: "Combien de temps faut-il attendre avant de baisser les vitres ?", a: "Après la pose, il est recommandé d'attendre environ 48 heures avant de baisser les vitres afin de permettre au film d'adhérer correctement." },
       { q: "Les films teintés peuvent-ils se décoller avec le temps ?", a: "Non, lorsque les films sont posés correctement avec des produits de qualité, ils sont conçus pour durer de nombreuses années sans se décoller ni se décolorer. Nos films sont garantis à vie." },
@@ -137,9 +137,9 @@ export default function FAQ() {
           {/* CTA */}
           <div className="mt-16 border border-gray-200 bg-gray-50 p-8 text-center rounded-2xl">
             <h3 className="font-bold text-lg mb-3 text-[#0d1117]">Vous ne trouvez pas votre réponse ?</h3>
-            <p className="text-sm mb-6 text-[#0d1117]/55">N'hésitez pas à nous contacter directement, nous vous répondrons dans les plus brefs délais.</p>
+            <p className="text-sm mb-6 text-[#0d1117]/55">Contactez-moi directement pour échanger sur votre projet, je vous répondrai rapidement.</p>
             <Link to="/contact" className="inline-flex items-center gap-2 bg-cyan text-[#0d1117] px-7 py-3 text-xs tracking-[0.15em] font-black uppercase hover:bg-cyan/80 transition-colors group rounded-xl">
-              Nous contacter <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+              Contact <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

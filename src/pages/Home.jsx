@@ -83,7 +83,7 @@ function ContactSection() {
           {/* Info */}
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
             <p className="text-[#0d1117]/55 text-sm leading-relaxed mb-10">
-              Uniquement sur rendez-vous. Contactez-nous pour obtenir un devis personnalisé ou pour planifier une intervention à votre domicile.
+              Uniquement sur rendez-vous. Contactez-moi pour obtenir un devis personnalisé ou planifier une intervention à votre domicile.
             </p>
 
             <div className="space-y-6">
@@ -136,14 +136,14 @@ function ContactSection() {
                 href="https://detailr.co/book/glowanddetails"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-cyan text-[#0d1117] px-6 py-3.5 text-xs font-black tracking-[0.15em] uppercase hover:bg-cyan/80 transition-colors rounded-xl w-full justify-center"
-              >
+                className="inline-flex items-center gap-2 bg-cyan text-[#0d1117] px-6 py-3.5 text-xs font-black tracking-[0.15em] uppercase hover:bg-cyan/80 transition-colors rounded-xl w-full justify-center">
+                
                 Réserver votre prestation
               </a>
             </div>
 
             <div className="mt-8 pt-8 border-t border-[#0d1117]/10">
-              <div className="text-xs text-[#0d1117]/40 tracking-widest uppercase mb-4">Suivez-nous</div>
+              <div className="text-xs text-[#0d1117]/40 tracking-widest uppercase mb-4">Suivez-moi</div>
               <div className="flex items-center gap-4 flex-wrap">
                 <a href="https://www.instagram.com/glow.and.details" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 border border-cyan/40 text-cyan px-4 py-2 text-xs tracking-widest uppercase hover:bg-cyan hover:text-[#0d1117] transition-all rounded-xl">
@@ -218,7 +218,7 @@ function ContactSection() {
                 className="w-full bg-white border border-gray-200 rounded-xl text-[#0d1117] text-sm px-4 py-3 focus:border-cyan focus:outline-none transition-colors resize-none placeholder:text-[#0d1117]/25"
                 placeholder="Décrivez votre besoin, l'état de votre véhicule..." />
                 </div>
-                <p className="text-xs text-[#0d1117]/40">Tous les prix s'entendent HTVA.</p>
+                <p className="text-xs text-[#0d1117]/40">Tous les prix s'entendent TTC.</p>
                 <button type="submit"
               className="w-full bg-[#0d1117] text-white py-4 text-xs tracking-[0.2em] font-black uppercase hover:bg-[#0d1117]/80 transition-all duration-300 rounded-xl">
                   Envoyer la demande
@@ -267,8 +267,8 @@ export default function Home() {
             <h1 className="font-montserrat font-bold mb-8 leading-tight" style={{ fontSize: 'clamp(3rem, 8vw, 5.5rem)' }}>
               <span className="text-cyan">du détail</span>
             </h1>
-            <p className="text-white/65 text-sm leading-relaxed mb-10 max-w-sm">
-              Chez Glow & Details, l'esthétique automobile est bien plus qu'un simple nettoyage : c'est un travail de précision où chaque détail compte.
+            <p className="text-white/65 text-sm leading-relaxed mb-10 max-w-sm">Chez Glow & Details, chaque passage est une transformation — votre véhicule retrouve l’éclat du
+jour où vous l’avez pris en main.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/services"
@@ -294,15 +294,15 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}>
             
-            <p className="text-cyan text-xs tracking-[0.4em] uppercase font-semibold mb-4">Notre approche</p>
+            <p className="text-cyan text-xs tracking-[0.4em] uppercase font-semibold mb-4">Mon approche</p>
             <h2 className="font-montserrat font-bold text-[#0d1117] leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
               Une approche complète<br />du detailing
             </h2>
             <p className="text-[#0d1117]/60 text-sm leading-relaxed mb-4">
-              Chaque véhicule qui nous est confié bénéficie d'une attention minutieuse. Notre objectif est de sublimer votre véhicule, restaurer son éclat et préserver sa beauté dans le temps.
+              Chaque véhicule que je traite reçoit une attention minutieuse ; aucune zone survolée, aucun raccourci.
             </p>
             <p className="text-[#0d1117]/60 text-sm leading-relaxed mb-8">
-              Nous utilisons exclusivement des produits haut de gamme et des techniques de pointe pour garantir un résultat sans compromis, dépassant les standards industriels.
+              Mon objectif est simple : que votre véhicule ressorte impeccable, et qu'il le reste.
             </p>
             <Link to="/a-propos"
             className="inline-flex items-center gap-2 text-cyan text-xs font-semibold tracking-widest uppercase hover:gap-3 transition-all group">
@@ -428,16 +428,16 @@ export default function Home() {
                 Collaboration<br /><span className="text-cyan">Saga Mercedes Charleroi</span>
               </h2>
               <p className="text-white/55 text-sm leading-loose mb-5">
-                Nous avons l'honneur d'accompagner Saga Mercedes Charleroi dans la préparation esthétique de leurs véhicules neufs, destinés à une clientèle exigeante.
+                J'ai l'honneur d'accompagner Saga Mercedes Charleroi dans la préparation esthétique de leurs véhicules neufs, destinés à une clientèle exigeante.
               </p>
               <p className="text-white/55 text-sm leading-loose mb-5">
-                Chaque intervention est réalisée avec une précision absolue et un souci du détail constant, afin de sublimer chaque véhicule et révéler pleinement son élégance. Dans le respect des standards d'excellence de Mercedes-Benz, nous apportons une attention particulière à chaque finition pour atteindre un niveau de présentation irréprochable.
+                Chaque intervention est réalisée avec une précision absolue et un souci du détail constant ; dans le respect des standards d'excellence de Mercedes-Benz, j'apporte une attention particulière à chaque finition pour atteindre une présentation irréprochable.
               </p>
               <p className="text-white/55 text-sm leading-loose">
-                Au-delà de la préparation, notre démarche s'inscrit dans la création d'une véritable expérience : celle de découvrir son véhicule dans un état parfait, à la hauteur de son prestige.
+                Au-delà de la préparation, l'objectif est simple : que chaque client découvre son véhicule dans un état parfait, à la hauteur de son prestige.
               </p>
               <div className="mt-8 border-l-2 border-cyan pl-5 py-1 text-sm text-cyan/80 italic">
-                Cette collaboration reflète notre engagement pour l'excellence et la confiance accordée à notre savoir-faire.
+                Cette collaboration reflète la confiance que Saga Mercedes place dans mon travail et l'exigence que je m'impose à chaque intervention.
               </div>
             </motion.div>
 
