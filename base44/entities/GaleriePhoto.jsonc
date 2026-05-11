@@ -1,6 +1,7 @@
 {
   "name": "GaleriePhoto",
   "type": "object",
+  "allow_public_read": true,
   "properties": {
     "src": {
       "type": "string",

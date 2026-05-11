@@ -99,7 +99,7 @@ export default function FAQ() {
 
       {/* Category tabs */}
       <div className="bg-white py-8 px-6 border-b border-gray-200">
-        <div className="max-w-5xl mx-auto flex flex-wrap gap-3">
+        <div className="max-w-5xl mx-auto flex flex-nowrap gap-3 overflow-x-auto pb-1">
           {faqCategories.map((cat, i) => (
             <button
               key={i}

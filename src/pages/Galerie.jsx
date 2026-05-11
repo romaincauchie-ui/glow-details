@@ -2,23 +2,30 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import BeforeAfterSlider from '@/components/galerie/BeforeAfterSlider';
 
-const categories = ['Tous', 'Mobile', 'Intérieur', 'Extérieur', 'Polissage', 'Céramique', 'Véhicules'];
+const categories = ['Avant/Après', 'Mobile', 'Intérieur', 'Extérieur', 'Polissage', 'Céramique', 'Véhicules'];
 
 export default function Galerie() {
-  const [active, setActive] = useState('Tous');
+  const [active, setActive] = useState('Avant/Après');
   const [lightbox, setLightbox] = useState(null);
   const [photos, setPhotos] = useState([]);
+  const [avantApres, setAvantApres] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    base44.entities.GaleriePhoto.list('order', 200).then(data => {
-      setPhotos(data);
+    Promise.all([
+      base44.entities.GaleriePhoto.list('order', 200),
+      base44.entities.AvantApres.list('order', 200),
+    ]).then(([p, aa]) => {
+      setPhotos(p);
+      setAvantApres(aa);
       setLoading(false);
     });
   }, []);
 
-  const filtered = active === 'Tous' ? photos : photos.filter(p => p.category === active);
+  const filteredPhotos = active === 'Avant/Après' ? [] : photos.filter(p => p.category === active);
+  const filteredAA = active === 'Avant/Après' ? avantApres : [];
 
   if (loading) return (
     <div className="min-h-screen bg-[#0d1117] flex items-center justify-center">
@@ -58,7 +65,22 @@ export default function Galerie() {
         <div className="max-w-7xl mx-auto">
           <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             <AnimatePresence>
-              {filtered.map((photo, i) => (
+              {/* Sliders avant/après */}
+              {filteredAA.map((item) => (
+                <motion.div
+                  key={`aa-${item.id}`}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <BeforeAfterSlider avant={item.avant} apres={item.apres} label={item.label} />
+                </motion.div>
+              ))}
+
+              {/* Photos classiques */}
+              {filteredPhotos.map((photo) => (
                 <motion.div
                   key={photo.src}
                   layout
@@ -70,16 +92,15 @@ export default function Galerie() {
                   className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-square">
                   <img src={photo.src} alt={photo.label}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                      <div className="text-cyan text-xs tracking-widest uppercase font-semibold mb-0.5">{photo.category}</div>
-                      <div className="text-white text-sm font-bold">{photo.label}</div>
-                    </div>
-                  </div>
+
                 </motion.div>
               ))}
             </AnimatePresence>
           </motion.div>
+
+          {filteredPhotos.length === 0 && filteredAA.length === 0 && (
+            <div className="text-center py-24 text-white/30 text-sm">Aucune photo dans cette catégorie</div>
+          )}
         </div>
       </section>
 

@@ -1,0 +1,27 @@
+{
+  "name": "AvantApres",
+  "type": "object",
+  "allow_public_read": true,
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "Titre / description de la paire"
+    },
+    "avant": {
+      "type": "string",
+      "description": "URL de la photo avant"
+    },
+    "apres": {
+      "type": "string",
+      "description": "URL de la photo apr\u00e8s"
+    },
+    "order": {
+      "type": "number",
+      "description": "Ordre d'affichage"
+    }
+  },
+  "required": [
+    "avant",
+    "apres"
+  ]
+}

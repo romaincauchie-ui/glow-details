@@ -7,13 +7,14 @@ const serviceDetails = {
     subtitle: 'Service mobile professionnel',
     sections: [
       {
+        heading: 'Qu\'est-ce qu\'un service de detailing mobile ?',
+        content: 'Je viens directement chez vous, sur votre lieu de travail ou en entreprise. Vous continuez votre journée pendant que je m\'occupe du nettoyage complet de votre véhicule.'
+      },
+      {
         heading: 'Faites nettoyer votre véhicule à la maison',
         content: 'Vous n\'avez pas le temps de laver ou d\'entretenir votre véhicule vous-même ? Avec mon service de detailing mobile, je transforme votre véhicule devant votre porte, en m\'adaptant à votre agenda. Qu\'il s\'agisse d\'une voiture familiale quotidienne, d\'une voiture de société ou d\'une voiture de luxe, je veille à ce que votre véhicule soit à nouveau propre, entretenu et protégé.'
       },
-      {
-        heading: 'Que faisons-nous exactement ?',
-        content: 'Avec mon service de detailing mobile, je viens à votre domicile et donne à votre véhicule un nettoyage professionnel — à l\'intérieur et à l\'extérieur. Selon l\'état du véhicule, vous choisissez un entretien ou un nettoyage en profondeur.'
-      },
+
       {
         heading: 'Plan d\'entretien',
         content: 'Pour les clients qui veulent garder leur véhicule impeccable sans y penser, je vous propose un plan d\'entretien personnalisé, adapté à votre rythme ; toutes les deux semaines, tous les mois, ou tous les deux mois. On en discute ensemble et on trouve ce qui correspond le mieux à votre quotidien.'
@@ -21,10 +22,6 @@ const serviceDetails = {
       {
         heading: 'FAQ',
         faqs: [
-          {
-            q: 'Qu\'est-ce qu\'un service de detailing mobile ?',
-            a: 'Je viens directement chez vous, sur votre lieu de travail ou en entreprise. Vous continuez votre journée pendant que je m\'occupe du nettoyage complet de votre véhicule.'
-          },
           {
             q: 'Dois-je fournir quelque chose moi-même ?',
             a: 'J\'apporte tout le matériel et les produits. J\'ai seulement besoin d\'un accès à l\'eau et à l\'électricité, à moins de 25 mètres du véhicule.'
@@ -50,7 +47,7 @@ const serviceDetails = {
         content: 'Je redonne à votre habitacle toute sa propreté et sa fraîcheur. Sièges, tapis, moquettes, plastiques et zones difficiles d\'accès. Chaque surface est traitée avec précision et des produits adaptés pour éliminer poussières, taches et impuretés. Votre intérieur ressort propre, sain et parfaitement entretenu.'
       },
       {
-        heading: 'Services Inclus',
+        heading: 'Ce service comprend',
         list: [
           'Aspiration complète',
           'Nettoyage par extraction des tapis',
@@ -64,16 +61,16 @@ const serviceDetails = {
       {
         heading: 'Options disponibles',
         list: [
-          'Shampoing des sièges - 75€',
-          'Désinfection habitacle - 35€',
-          'Shampoing moquettes - 40€',
-          'Nettoyage plafonnier - 60€',
-          'Céramique cuir - 200€'
+          'Shampoing des sièges',
+          'Désinfection habitacle',
+          'Shampoing moquettes',
+          'Nettoyage plafonnier',
+          'Céramique cuir'
         ]
       },
       {
         heading: 'Note importante',
-        content: 'En cas de pollution grave ou la présence de poils de chien/chat, des frais supplémentaires peuvent être facturés. Demandez un devis sans engagement en nous contactant par e-mail ou par téléphone.'
+        content: 'En cas de pollution grave ou la présence de poils de chien/chat, des frais supplémentaires peuvent être facturés. Demandez un devis sans engagement en me contactant par e-mail ou par téléphone.'
       }
     ]
   },
@@ -86,7 +83,7 @@ const serviceDetails = {
         content: 'Je nettoie l\'extérieur de votre véhicule selon des méthodes de lavage professionnelles permettant de nettoyer la carrosserie en profondeur tout en respectant les surfaces les plus sensibles. Chaque élément du véhicule est soigneusement traité afin d\'éliminer le film routier, la saleté et les contaminants accumulés. Ce travail minutieux permet de restaurer la brillance naturelle du véhicule et d\'obtenir une finition nette et soignée dans les moindres détails.'
       },
       {
-        heading: 'Services Inclus',
+        heading: 'Ce service comprend',
         list: [
           'Nettoyage en profondeur des jantes',
           'Nettoyage en profondeur des passages de roues',
@@ -100,11 +97,11 @@ const serviceDetails = {
       {
         heading: 'Options Disponibles',
         list: [
-          'Traitement pare-brise hydrophobe - 30€',
-          'Décontamination carrosserie - 30€',
-          'Nettoyage toile cabriolet - 40€',
-          'Traitement hydrophobe toile cabriolet - 180€ (nettoyage inclus)',
-          'Compartiment moteur - 50€'
+          'Traitement pare-brise hydrophobe',
+          'Décontamination carrosserie',
+          'Nettoyage toile cabriolet',
+          'Traitement hydrophobe toile cabriolet',
+          'Compartiment moteur'
         ]
       },
       {
@@ -126,8 +123,8 @@ const serviceDetails = {
         content: 'Grâce à l\'utilisation de produits haut de gamme, d\'un matériel professionnel et d\'un véritable savoir-faire technique, votre carrosserie récupère une finition proche du neuf. Le polissage est la solution idéale pour redonner toute sa brillance à votre véhicule : ce procédé technique permet de corriger les défauts présents dans le vernis afin de restaurer la profondeur, la clarté et l\'éclat de la carrosserie. Avec le temps, les micro-rayures, les traces de lavage et l\'usure générale peuvent ternir la peinture et diminuer l\'aspect esthétique de la voiture.'
       },
       {
-        heading: 'Polissage en 1 étape',
-        content: 'Ce traitement est idéal pour les véhicules en bon état ou récents, présentant de légères micro-rayures ou un vernis légèrement terni. Le polissage en 1 étape permet de raviver la brillance et d\'améliorer l\'apparence générale de la carrosserie sans correction intensive. Ce service comprend: Lavage et décontamination complète de la carrosserie, Polissage en 1 étape pour réduire les micro-rayures et améliorer la brillance de la peinture, Nettoyage et rénovation des plastiques extérieurs, Inspection des phares (polissage possible en option), Application d\'un scellant pour protéger la peinture.'
+        heading: 'Lustrage',
+        content: 'Ce traitement est idéal pour les véhicules en bon état ou récents, présentant de légères micro-rayures ou un vernis légèrement terni. Le lustrage permet de raviver la brillance et d\'améliorer l\'apparence générale de la carrosserie sans correction intensive. Ce service comprend: Lavage et décontamination complète de la carrosserie, Lustrage pour réduire les micro-rayures et améliorer la brillance de la peinture, Nettoyage et rénovation des plastiques extérieurs, Inspection des phares (polissage possible en option), Application d\'un scellant pour protéger la peinture.'
       },
       {
         heading: 'Polissage en 2 étapes',
@@ -221,7 +218,12 @@ const serviceDetails = {
       },
       {
         heading: 'Les avantages',
-        content: 'Réduction de la chaleur: Les films solaires permettent de réduire significativement la chaleur dans l\'habitacle, améliorant ainsi le confort lors des journées ensoleillées.\n\nProtection contre les UV: Les vitres teintées bloquent jusqu\'à 99 % des rayons UV, protégeant ainsi l\'intérieur du véhicule (cuirs, plastiques, tissus) contre la décoloration et le vieillissement.\n\nPlus d\'intimité: Les vitres teintées limitent la visibilité depuis l\'extérieur, offrant plus de discrétion et de sécurité pour les passagers et les objets présents dans l\'habitacle.\n\nEsthétique améliorée: En plus de leurs avantages pratiques, les vitres teintées apportent une touche esthétique plus sportive et élégante à votre véhicule.'
+        list: [
+          'Réduction de la chaleur : Les films solaires permettent de réduire significativement la chaleur dans l\'habitacle, améliorant ainsi le confort lors des journées ensoleillées.',
+          'Protection contre les UV : Les vitres teintées bloquent jusqu\'à 99 % des rayons UV, protégeant ainsi l\'intérieur du véhicule (cuirs, plastiques, tissus) contre la décoloration et le vieillissement.',
+          'Plus d\'intimité : Les vitres teintées limitent la visibilité depuis l\'extérieur, offrant plus de discrétion et de sécurité pour les passagers et les objets présents dans l\'habitacle.',
+          'Esthétique améliorée : En plus de leurs avantages pratiques, les vitres teintées apportent une touche esthétique plus sportive et élégante à votre véhicule.'
+        ]
       },
       {
         heading: 'Une pose professionnelle',
@@ -255,10 +257,7 @@ const serviceDetails = {
       {
         heading: 'FAQ',
         faqs: [
-          {
-            q: 'Les vitres teintées sont-elles légales ?',
-            a: 'Oui, mais certaines règles doivent être respectées. En Belgique, les vitres avant doivent laisser passer suffisamment de lumière afin de garantir la visibilité du conducteur. Les vitres arrière peuvent généralement être plus foncées. Chaque recommandation est faite dans le respect strict de la législation, afin de vous garantir une conformité totale en toute sérénité.'
-          },
+
           {
             q: 'Combien de temps dure la pose ?',
             a: 'La pose de vitres teintées prend généralement entre 2 et 4 heures, selon le véhicule et le nombre de vitres à traiter.'

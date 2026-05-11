@@ -4,30 +4,23 @@ import { motion } from 'framer-motion';
 
 const sections = [
   {
-    label: 'Nettoyage à domicile',
+    label: 'Nettoyage',
     subtitle: 'Service mobile à domicile',
     note: 'Déplacement offert dans un rayon de 25km · 0,60€/km au-delà',
     categories: [
       {
         title: 'Entretien mensuel',
         price: 'À partir de 80€',
-        items: ['Nettoyage extérieur', 'Aspiration intérieure', 'Traitement des plastiques', 'Vitres & écrans'],
+        items: ['Nettoyage extérieur', 'Aspiration intérieure', 'Vitres & écrans'],
         note: null,
       },
       {
         title: 'Detailing complet',
         price: 'À partir de 150€',
-        items: ['Nettoyage intérieur & extérieur approfondi', 'Finitions soignées', 'Traitement des plastiques', 'Vitres & écrans'],
+        items: ['Remise à neuf de l\'habitacle', 'Nettoyage extérieur', 'Vitres & écrans'],
         note: null,
         highlight: true,
       },
-    ],
-  },
-  {
-    label: 'Nettoyage',
-    subtitle: null,
-    note: null,
-    categories: [
       {
         title: 'Intérieur',
         price: 'À partir de 105€',
@@ -37,20 +30,21 @@ const sections = [
       {
         title: 'Extérieur',
         price: 'À partir de 50€',
-        items: ['Nettoyage jantes & passages de roues', 'Pré-lavage + lavage à la main', 'Séchage microfibre', 'Application cire', 'Finitions & contours de portes'],
+        items: ['Nettoyage jantes & passages de roues', 'Pré-lavage + lavage à la main', 'Séchage microfibre', 'Application d\'une cire', 'Finitions & contours de portes'],
         note: null,
       },
     ],
+    supercar: true,
   },
   {
     label: 'Polissage',
-    subtitle: 'Correction de peinture',
+    subtitle: 'Correction de vernis',
     note: null,
     categories: [
       {
         title: 'Lustrage',
         price: 'À partir de 350€',
-        items: ['Lavage & décontamination', 'Correction micro-rayures légères', 'Rénovation plastiques extérieurs', 'Application scellant protecteur'],
+        items: ['Lavage & décontamination', 'Rehaussement de la brillance', 'Rénovation plastiques extérieurs', 'Application scellant protecteur'],
         note: null,
       },
       {
@@ -62,32 +56,32 @@ const sections = [
       {
         title: 'Polissage des phares',
         price: '45€ / phare',
-        items: ['Élimination de l\'oxydation', 'Polissage clarté & transparence', 'Application protection durable'],
+        items: ['Élimination de l\'oxydation', 'Restauration de la transparence', 'Application protection anti-UV'],
         note: 'Phares ternis ou jaunis',
       },
     ],
   },
   {
-    label: 'Céramique',
+    label: 'Protection Céramique',
     subtitle: 'Protection longue durée',
     note: null,
     categories: [
       {
         title: 'Véhicule neuf',
         price: 'À partir de 600€',
-        items: ['Lavage & décontamination minutieuse', 'Préparation de surface optimale', 'Application revêtement céramique', 'Brillance intense + effet hydrophobe'],
+        items: ['Nettoyage et décontamination', 'Lustrage complet', 'Application du traitement céramique', 'Brillance intense + effet hydrophobe'],
         note: 'Véhicules neufs ou très récents',
       },
       {
         title: 'Véhicule d\'occasion',
         price: 'À partir de 1 000€',
-        items: ['Polissage de correction inclus', 'Lavage & décontamination', 'Application revêtement céramique', 'Protection et brillance maximales'],
+        items: ['Nettoyage et décontamination', 'Polissage en 2 étapes', 'Application du traitement céramique', 'Protection et brillance maximale'],
         note: 'Avec correction de peinture',
       },
       {
         title: 'Véhicule mat / PPF',
         price: 'À partir de 600€',
-        items: ['Produits adaptés peinture mate', 'Préservation de l\'aspect d\'origine', 'Protection contre les contaminants', 'Facilitation de l\'entretien'],
+        items: ['Nettoyage et décontamination', 'Produits adaptés peinture mat / PPF', 'Préservation de l\'aspect d\'origine', 'Application du traitement céramique'],
         note: 'Peintures mates et films PPF',
       },
     ],
@@ -95,24 +89,25 @@ const sections = [
   {
     label: 'Vitres teintées',
     subtitle: 'Pose professionnelle — Garantie à vie',
-    note: 'Garantie à vie sur la pose · Film haute qualité',
+    note: null,
+    tintFeatures: ['Garantie à vie sur la pose', 'Découpe sur mesure', 'Application sans bulles', 'Film haute qualité'],
     categories: [
       {
         title: 'Face arrière — 3 vitres',
         price: 'À partir de 180€',
-        items: ['Découpe sur mesure', 'Application sans bulles', 'Garantie à vie'],
+        items: [],
         note: null,
       },
       {
         title: 'Face arrière — 5 vitres',
         price: 'À partir de 200€',
-        items: ['Découpe sur mesure', 'Application sans bulles', 'Garantie à vie'],
+        items: [],
         note: null,
       },
       {
         title: 'Face arrière — 7 vitres',
         price: 'À partir de 240€',
-        items: ['Découpe sur mesure', 'Application sans bulles', 'Garantie à vie'],
+        items: [],
         note: null,
       },
     ],
@@ -149,7 +144,9 @@ function PriceCard({ category, isLight }) {
       transition={{ duration: 0.4 }}
       viewport={{ once: true }}
       className={`rounded-2xl p-7 flex flex-col gap-4 border transition-all duration-300 ${
-        category.highlight
+        category.isSuper
+          ? 'border-cyan bg-cyan/5'
+          : category.highlight
           ? 'border-cyan bg-cyan/5'
           : isLight
           ? 'bg-white border-gray-200 hover:border-cyan/50 shadow-sm'
@@ -208,6 +205,16 @@ export default function Tarifs() {
                 {section.note && (
                   <p className="text-sm border-l-2 border-cyan pl-4 italic text-white/50">{section.note}</p>
                 )}
+                {section.tintFeatures && (
+                  <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+                    {section.tintFeatures.map((f, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-white/60">
+                        <Check size={13} className="text-cyan flex-shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
 
               <div className={`grid gap-6 ${
@@ -220,15 +227,37 @@ export default function Tarifs() {
                 ))}
               </div>
 
+              {/* Supercar bandeau */}
+              {section.supercar && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} viewport={{ once: true }}
+                  className="mt-6 rounded-2xl border border-cyan bg-cyan/5 p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+                >
+                  <div>
+                    <h3 className="text-cyan font-black text-xl tracking-widest uppercase mb-2">🏎️ Supercars</h3>
+                    <p className="text-white/55 text-sm">Traitement sur mesure pour les véhicules haut de gamme et de prestige</p>
+                  </div>
+                  <div className="text-center flex-shrink-0">
+                    <div className="text-white font-black text-2xl mb-1">Sur devis</div>
+                    <Link to="/contact" className="text-cyan text-xs tracking-widest uppercase hover:underline flex items-center gap-1">
+                      Nous contacter <ArrowRight size={11} />
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Teintes */}
               {section.tints && (
-                <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="mt-10">
+                <p className="text-xs tracking-[0.3em] uppercase font-semibold text-white/40 mb-4">Teintes disponibles</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {section.tints.map((t, i) => (
                     <div key={i} className="rounded-xl p-5 text-center border bg-card border-border">
                       <div className="text-2xl font-black text-cyan mb-1">{t.pct}</div>
                       <div className="text-sm font-semibold text-white">{t.label}</div>
                     </div>
                   ))}
+                </div>
                 </div>
               )}
             </div>
@@ -240,24 +269,7 @@ export default function Tarifs() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="mb-12">
             <p className="text-cyan text-xs tracking-[0.4em] uppercase font-semibold mb-3">À la carte</p>
-            <h2 className="font-montserrat font-bold text-[#0d1117] mb-3" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)' }}>Options & Supercars</h2>
-          </motion.div>
-
-          {/* Supercars */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} viewport={{ once: true }}
-            className="mb-8 rounded-2xl border border-cyan bg-cyan/5 p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
-          >
-            <div>
-              <h3 className="text-cyan font-black text-xl tracking-widest uppercase mb-2">🏎️ Supercars</h3>
-              <p className="text-[#0d1117]/55 text-sm">Traitement spécialisé pour les véhicules haut de gamme et de prestige</p>
-            </div>
-            <div className="text-center flex-shrink-0">
-              <div className="text-[#0d1117] font-black text-2xl mb-1">Sur devis</div>
-              <Link to="/contact" className="text-cyan text-xs tracking-widest uppercase hover:underline flex items-center gap-1">
-                Nous contacter <ArrowRight size={11} />
-              </Link>
-            </div>
+            <h2 className="font-montserrat font-bold text-[#0d1117] mb-3" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)' }}>Options</h2>
           </motion.div>
 
           {/* Options intérieur */}
@@ -306,7 +318,7 @@ export default function Tarifs() {
       <section className="py-28 px-6 bg-[#0d1117]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-montserrat font-bold text-3xl sm:text-4xl text-white mb-4">Besoin d'un devis personnalisé ?</h2>
-          <p className="text-white/45 mb-10 text-base leading-loose">Contactez-nous pour tout véhicule utilitaire, supercar ou besoin spécifique</p>
+          <p className="text-white/45 mb-10 text-base leading-loose">Contactez-moi pour tout véhicule utilitaire, supercar ou besoin spécifique</p>
           <Link to="/contact" className="inline-flex items-center gap-2 bg-cyan text-[#0d1117] px-8 py-4 text-xs tracking-[0.15em] font-black uppercase hover:bg-cyan/80 transition-colors group rounded-xl">
             Demander un devis <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>

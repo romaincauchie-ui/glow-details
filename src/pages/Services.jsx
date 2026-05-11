@@ -27,11 +27,11 @@ const services = [
   label: 'Intérieur',
   subtitle: 'Nettoyage en profondeur',
   description: "Je redonne à votre habitacle toute sa propreté et sa fraîcheur. Sièges, tapis, moquettes, plastiques et zones difficiles d'accès. Chaque surface est traitée avec précision et des produits adaptés pour éliminer poussières, taches et impuretés. Votre intérieur ressort propre, sain et parfaitement entretenu.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/d7611521e_Interieur1.jpg',
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/86d4128f1_Interieur4.jpg',
   extraImages: [
     'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/a4385a2c9_Interieur2paysage.jpg',
     'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/754f6dc0f_Interieur3.jpg',
-    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/86d4128f1_Interieur4.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/d7611521e_Interieur1.jpg',
   ],
   items: [
   {
@@ -50,11 +50,11 @@ const services = [
   label: 'Extérieur',
   subtitle: 'Lavage à la main premium',
   description: "Je nettoie l'extérieur de votre véhicule selon des méthodes de lavage professionnelles permettant de nettoyer la carrosserie en profondeur tout en respectant les surfaces les plus sensibles. Chaque élément du véhicule est soigneusement traité afin d'éliminer le film routier, la saleté et les contaminants accumulés. Ce travail minutieux permet de restaurer la brillance naturelle du véhicule et d'obtenir une finition nette et soignée dans les moindres détails.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/ecb6bfc61_Exterieur1.jpg',
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/fd5caacfc_Exterieur1.jpg',
   extraImages: [
-    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/ecb6bfc61_Exterieur1.jpg',
-    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/3a87955ff_Exterieur2.jpg',
-    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/482f7d522_Traitementhydrophobepare-brise.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/0240204d1_Exterieur2.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/080fc5c1f_Exterieur3.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/2c6c34452_Exterieur4.jpg',
   ],
   items: [
   {
@@ -98,11 +98,11 @@ const services = [
   label: 'Revêtement céramique',
   subtitle: 'Protection longue durée',
   description: "Un revêtement céramique forme une barrière durable contre les agressions extérieures tout en améliorant la brillance et la profondeur de votre peinture. Un investissement durable pour votre véhicule.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/07299290e_Ceramique1.jpg',
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/84f5b423f_Ceramique4.jpg',
   extraImages: [
     'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/438a3eee5_Ceramique2paysage.jpg',
     'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/07d443c4a_Ceramique3.jpg',
-    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/84f5b423f_Ceramique4.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/07299290e_Ceramique1.jpg',
   ],
   items: [
   {
@@ -127,7 +127,12 @@ const services = [
   label: 'Vitres teintées',
   subtitle: 'Pose professionnelle — Garantie à vie',
   description: "La pose de vitres teintées améliore à la fois le confort, la protection et l'esthétique de votre véhicule. Des films de haute qualité, appliqués avec précision, assurent un rendu irréprochable et durable.",
-  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/04ad1cf9d_Vitresteintees1.jpg',
+  image: 'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/9b0c40a43_Vitresteintees1.jpg',
+  extraImages: [
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/b1e710261_Vitresteintees2.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/01acd9f8d_Vitresteintees3.jpg',
+    'https://media.base44.com/images/public/69c2aed943bbaa851541e30d/1897b64a0_Vitresteintees4.jpg',
+  ],
   items: [
   { name: 'Face arrière — 3 vitres', price: 'À partir de 180€', features: ['Découpe sur mesure', 'Application sans bulles', 'Garantie à vie'] },
   { name: 'Face arrière — 5 vitres', price: 'À partir de 200€', features: ['Découpe sur mesure', 'Application sans bulles', 'Garantie à vie'] },
@@ -162,7 +167,7 @@ export default function Services() {
         serviceId={selectedService}
         isOpen={!!selectedService}
         onClose={() => setSelectedService(null)}
-        isLight={services.find((s) => s.id === selectedService) && services.findIndex((s) => s.id === selectedService) % 2 !== 0} />
+        isLight={false} />
       
       {/* Hero — dark */}
       <section className="relative h-64 sm:h-80 flex items-end pb-10 overflow-hidden">
@@ -170,7 +175,7 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-[#0d1117]/95" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <p className="text-cyan text-xs tracking-[0.4em] uppercase font-semibold mb-3">Glow & Details</p>
-          <h1 className="font-montserrat font-bold text-5xl sm:text-6xl text-white">Nos Services</h1>
+          <h1 className="font-montserrat font-bold text-5xl sm:text-6xl text-white">Services</h1>
         </div>
       </section>
 

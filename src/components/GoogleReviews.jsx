@@ -41,7 +41,7 @@ export default function GoogleReviews() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-cyan text-xs tracking-[0.4em] uppercase font-semibold mb-4">Ce que disent nos clients</p>
+          <p className="text-cyan text-xs tracking-[0.4em] uppercase font-semibold mb-4">Retour client</p>
           <h2 className="font-montserrat font-bold text-[#0d1117] mb-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
             Avis Google
           </h2>

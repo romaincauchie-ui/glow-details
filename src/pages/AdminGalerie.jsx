@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
-import { Plus, Trash2, Pencil, X, Check, Upload, Images } from 'lucide-react';
+import { Plus, Trash2, Pencil, X, Check, Upload, Images, SplitSquareHorizontal } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import AvantApresForm from '@/components/admin/AvantApresForm';
+import BeforeAfterSlider from '@/components/galerie/BeforeAfterSlider';
 
 const CATEGORIES = ['Mobile', 'Intérieur', 'Extérieur', 'Polissage', 'Céramique', 'Véhicules'];
 
@@ -204,10 +206,12 @@ function PhotoForm({ photo, onSave, onCancel }) {
 
 export default function AdminGalerie() {
   const [photos, setPhotos] = useState([]);
+  const [avantApres, setAvantApres] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('Tous');
   const [showAdd, setShowAdd] = useState(false);
   const [showBulk, setShowBulk] = useState(false);
+  const [showAvantApres, setShowAvantApres] = useState(false);
   const [editing, setEditing] = useState(null);
   const navigate = useNavigate();
 
@@ -217,16 +221,22 @@ export default function AdminGalerie() {
     base44.auth.me().then(u => {
       if (!u || u.role !== 'admin') { navigate('/'); return; }
       setUser(u);
-      loadPhotos();
+      loadAll();
     }).catch(() => navigate('/'));
   }, []);
 
-  const loadPhotos = async () => {
+  const loadAll = async () => {
     setLoading(true);
-    const data = await base44.entities.GaleriePhoto.list('order', 200);
+    const [data, aa] = await Promise.all([
+      base44.entities.GaleriePhoto.list('order', 200),
+      base44.entities.AvantApres.list('order', 200),
+    ]);
     setPhotos(data);
+    setAvantApres(aa);
     setLoading(false);
   };
+
+  const loadPhotos = loadAll;
 
   const handleAdd = async (form) => {
     await base44.entities.GaleriePhoto.create(form);
@@ -272,7 +282,13 @@ export default function AdminGalerie() {
               Voir la galerie
             </button>
             <button
-              onClick={() => { setShowBulk(true); setShowAdd(false); setEditing(null); }}
+              onClick={() => { setShowAvantApres(true); setShowBulk(false); setShowAdd(false); setEditing(null); }}
+              className="border border-cyan/50 text-cyan px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-cyan/10 transition-colors flex items-center gap-2"
+            >
+              <SplitSquareHorizontal size={14} /> Avant / Après
+            </button>
+            <button
+              onClick={() => { setShowBulk(true); setShowAdd(false); setShowAvantApres(false); setEditing(null); }}
               className="border border-cyan/50 text-cyan px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-cyan/10 transition-colors flex items-center gap-2"
             >
               <Images size={14} /> Import multiple
@@ -285,6 +301,15 @@ export default function AdminGalerie() {
             </button>
           </div>
         </div>
+
+        {/* Avant / Après */}
+        {showAvantApres && (
+          <AvantApresForm
+            nextOrder={avantApres.length + 1}
+            onDone={() => { setShowAvantApres(false); loadAll(); }}
+            onCancel={() => setShowAvantApres(false)}
+          />
+        )}
 
         {/* Import multiple */}
         {showBulk && (
@@ -299,6 +324,28 @@ export default function AdminGalerie() {
         {showAdd && (
           <div className="mb-10 max-w-lg">
             <PhotoForm onSave={handleAdd} onCancel={() => setShowAdd(false)} />
+          </div>
+        )}
+
+        {/* Section Avant/Après */}
+        {avantApres.length > 0 && (
+          <div className="mb-10">
+            <h2 className="text-white font-bold text-sm tracking-widest uppercase mb-4 flex items-center gap-2">
+              <SplitSquareHorizontal size={14} className="text-cyan" /> Avant / Après ({avantApres.length})
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {avantApres.map(item => (
+                <div key={item.id} className="relative group">
+                  <BeforeAfterSlider avant={item.avant} apres={item.apres} label={item.label} />
+                  <button
+                    onClick={async () => { if (confirm('Supprimer ?')) { await base44.entities.AvantApres.delete(item.id); loadAll(); } }}
+                    className="absolute top-2 right-2 w-8 h-8 bg-black/60 hover:bg-red-500 rounded-lg flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 z-10"
+                  >
+                    <Trash2 size={13} />
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Focus, Star, Wrench, Car } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const values = [
-{ title: 'Précision', desc: 'Chaque intervention est réalisée avec une attention minutieuse aux moindres détails.' },
-{ title: 'Qualité', desc: 'Produits haut de gamme et matériel professionnel pour des résultats durables.' },
-{ title: 'Expertise', desc: 'Techniques reconnues dans le domaine du detailing automobile professionnel.' },
-{ title: 'Service', desc: 'Déplacement à domicile, nous nous adaptons à votre agenda et vos besoins.' }];
+{ title: 'Précision', desc: 'Chaque intervention est réalisée avec une attention minutieuse aux moindres détails.', icon: Focus },
+{ title: 'Qualité', desc: 'Produits haut de gamme et matériel professionnel pour des résultats durables.', icon: Star },
+{ title: 'Expertise', desc: 'Techniques reconnues dans le domaine du detailing automobile professionnel.', icon: Wrench },
+{ title: 'Service', desc: "Déplacement à domicile, je m'adapte à votre agenda et vos besoins.", icon: Car }];
 
 
 const services_list = [
@@ -40,16 +40,19 @@ export default function APropos() {
               <span className="text-cyan">c'est ma façon de travailler</span>
             </h2>
             <p className="text-[#0d1117]/60 text-sm leading-relaxed mb-6">
-              Glow & Details, c'est une reconversion qui a commencé dans mon propre garage. J'ai toujours pris un soin particulier à entretenir ma voiture — chaque détail, chaque surface, sans jamais bâcler. Ce que d'autres faisaient en vingt minutes, je le faisais en deux heures, et j'aimais ça. C'est là que j'ai compris que ce niveau d'exigence pouvait devenir un métier.
+              Glow & Details, c'est une reconversion qui a commencé dans mon propre garage.
             </p>
             <p className="text-[#0d1117]/60 text-sm leading-relaxed mb-6">
-              Diplômé de l'École Hôtelière Provinciale de Namur et formé dans des environnements où l'excellence était la norme, j'ai appris que la rigueur n'est pas une option — c'est une façon de travailler. J'ai transposé cette même exigence au detailing.
+              Diplômé de l'École Hôtelière Provinciale de Namur et formé dans des environnements où l'excellence était la norme, j'ai appris que la rigueur n'est pas une option — c'est une façon de travailler.
             </p>
             <p className="text-[#0d1117]/60 text-sm leading-relaxed mb-6">
-              Ce qui me plaît dans ce métier, c'est la liberté de prendre le temps qu'il faut pour que chaque véhicule soit traité comme il se doit — sans compromis, sans regarder l'horloge. Et la possibilité de continuer à apprendre, à développer des projets, à faire grandir quelque chose qui m'appartient vraiment.
+              J'ai donc transposé cette même exigence au detailing.
+            </p>
+            <p className="text-[#0d1117]/60 text-sm leading-relaxed mb-6">
+              Ce qui me plaît dans ce métier, c'est la liberté de prendre le temps qu'il faut pour que chaque véhicule soit traité comme il se doit — sans compromis, sans regarder l'horloge. Tout cela en exerçant une passion et en vous faisant redécouvrir votre véhicule. Rien n'est laissé au hasard.
             </p>
             <p className="text-[#0d1117]/60 text-sm leading-relaxed">
-              Aujourd'hui j'interviens entre <strong className="text-[#0d1117]">Charleroi et Nivelles</strong>, dans la province du Hainaut, le Brabant wallon et la province de Namur. Chaque véhicule que je traite reçoit la même attention que le mien — rien de moins.
+              Situé entre <strong className="text-[#0d1117]">Charleroi et Nivelles</strong>, j'interviens principalement dans la province du Hainaut, le Brabant wallon et la province de Namur.
             </p>
           </motion.div>
 
@@ -76,8 +79,8 @@ export default function APropos() {
               viewport={{ once: true }}
               className="bg-card border border-border p-8 hover:border-cyan/40 transition-all">
               
-                <div className="w-8 h-8 border border-cyan flex items-center justify-center mb-5">
-                  <div className="w-2 h-2 bg-cyan"></div>
+                <div className="w-10 h-10 border border-cyan flex items-center justify-center mb-5 text-cyan">
+                  <v.icon size={18} />
                 </div>
                 <h3 className="font-bold text-white text-sm tracking-wide mb-3">{v.title}</h3>
                 <p className="text-white/50 text-xs leading-relaxed">{v.desc}</p>

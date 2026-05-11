@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock, Instagram, Facebook, MessageCircle, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import GoogleReviews from '@/components/GoogleReviews';
 import { base44 } from '@/api/base44Client';
@@ -17,10 +17,7 @@ const services = [
   path: '/services#domicile'
 },
 {
-  icon:
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="3" /><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
-      </svg>,
+  icon: <Sparkles width="22" height="22" />,
 
   title: 'Polissage',
   desc: 'Correction de peinture',
@@ -39,7 +36,7 @@ const services = [
 {
   icon:
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+        <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
       </svg>,
 
   title: 'Vitres teintées',
@@ -75,7 +72,7 @@ function ContactSection() {
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="mb-12">
           <p className="text-cyan text-xs tracking-[0.4em] uppercase font-semibold mb-3">Réservation & devis</p>
           <h2 className="font-montserrat font-bold text-[#0d1117] leading-tight" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-            Discutons de votre<br /><span className="text-cyan">projet detailing</span>
+            Discutons de votre<br /><span className="text-cyan">projet</span>
           </h2>
         </motion.div>
 
@@ -273,7 +270,7 @@ jour où vous l’avez pris en main.
             <div className="flex flex-wrap gap-3">
               <Link to="/services"
               className="bg-white text-[#0d1117] text-xs font-black tracking-[0.15em] uppercase px-6 py-3 hover:bg-white/90 transition-colors flex items-center gap-2 group rounded-xl">
-                Découvrir nos services
+                Découvrir les services
                 <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link to="/contact"
